@@ -20,7 +20,7 @@ class LoginUI extends StatelessWidget {
           child: Card(
             elevation: 1,
             color: Color(0xFF251734).withOpacity(0.5),
-            margin: EdgeInsets.all(20),
+            margin: EdgeInsets.only(left: 32, right: 32),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
             child: FittedBox(
