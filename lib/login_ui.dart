@@ -11,11 +11,9 @@ class LoginUI extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF3366FF), Color(0xFF00CCFF)],
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.0),
-            stops: [0.4, 1.0],
-            tileMode: TileMode.clamp,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: <Color>[Colors.red, Colors.blue],
           ),
         ),
         child: Center(
@@ -25,47 +23,45 @@ class LoginUI extends StatelessWidget {
             margin: EdgeInsets.all(16),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
-            child: Container(
-              height: 280,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.only(top: 18, bottom: 18),
-                    decoration: BoxDecoration(
-                      color: color,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(32),
-                        topRight: Radius.circular(32),
+            child: FittedBox(
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.only(top: 18, bottom: 18),
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(32),
+                          topRight: Radius.circular(32),
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'CUSTOMER LOGIN',
-                        style: TextStyle(
-                          color: Colors.white,
-                          letterSpacing: 1.5,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
+                      child: Center(
+                        child: Text(
+                          'CUSTOMER LOGIN',
+                          style: TextStyle(
+                            color: Colors.white,
+                            letterSpacing: 1.5,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(16, 10, 16, 10),
-                    child: Column(
-                      children: [
-                        CustomTextField(
-                            labelText: 'Email ID', icon: Icons.mail),
-                        CustomTextField(
-                            labelText: 'Password', icon: Icons.lock),
-                        SizedBox(height: 16),
-                        Row(
-                          children: [
-                            Expanded(
-                              flex: 5,
-                              child: Row(
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(16, 10, 16, 20),
+                      child: Column(
+                        children: [
+                          CustomTextField(
+                              labelText: 'Email ID', icon: Icons.mail),
+                          CustomTextField(
+                              labelText: 'Password', icon: Icons.lock),
+                          SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Row(
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(color: color),
@@ -82,42 +78,41 @@ class LoginUI extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                            ),
-                            Spacer(),
-                            Expanded(
-                              flex: 5,
-                              child: Text(
+                              Spacer(),
+                              Text(
                                 'Forgot Password?',
                                 style: TextStyle(
                                     fontStyle: FontStyle.italic,
                                     fontWeight: FontWeight.w400,
                                     color: Colors.grey[600],
                                     fontSize: 13),
-                              ),
-                            )
-                          ],
-                        ),
-                        SizedBox(height: 18),
-                        MaterialButton(
-                          onPressed: () {},
-                          child: Text(
-                            'LOGIN',
-                            style: TextStyle(
-                                letterSpacing: 1.2,
-                                fontWeight: FontWeight.w400),
+                              )
+                            ],
                           ),
-                          elevation: 0,
-                          textColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)),
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 60, vertical: 9),
-                          color: color,
-                        )
-                      ],
+                          SizedBox(height: 18),
+                          Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 60, vertical: 10),
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: <Color>[Colors.grey[700]!, color],
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              'LOGIN',
+                              style: TextStyle(
+                                  letterSpacing: 1.2,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
