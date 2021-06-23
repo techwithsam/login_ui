@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Login UI Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        textTheme: GoogleFonts.sourceSansProTextTheme(
+        textTheme: GoogleFonts.ralewayTextTheme(
           Theme.of(context).textTheme.apply(bodyColor: Colors.white),
         ),
       ),
