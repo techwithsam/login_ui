@@ -20,7 +20,7 @@ class LoginUI extends StatelessWidget {
           child: Card(
             elevation: 1,
             color: Color(0xFF251734).withOpacity(0.5),
-            margin: EdgeInsets.all(16),
+            margin: EdgeInsets.all(20),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
             child: FittedBox(
@@ -51,14 +51,15 @@ class LoginUI extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(16, 10, 16, 20),
+                      padding: EdgeInsets.fromLTRB(16, 14, 16, 20),
                       child: Column(
                         children: [
                           CustomTextField(
                               labelText: 'Email ID', icon: Icons.mail),
+                          SizedBox(height: 16),
                           CustomTextField(
                               labelText: 'Password', icon: Icons.lock),
-                          SizedBox(height: 16),
+                          SizedBox(height: 20),
                           Row(
                             children: [
                               Row(
@@ -89,7 +90,7 @@ class LoginUI extends StatelessWidget {
                               )
                             ],
                           ),
-                          SizedBox(height: 18),
+                          SizedBox(height: 22),
                           Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: 60, vertical: 10),
